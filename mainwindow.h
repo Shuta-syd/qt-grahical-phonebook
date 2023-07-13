@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "contactlist.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +16,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_btnAdd_clicked();
+
+    void on_btnSearch_clicked();
+
+    void on_btnRemove_clicked();
+
+    void on_btnExit_clicked();
+
 private:
     Ui::MainWindow *ui;
+    ContactList _phoneBook;
 };
 #endif // MAINWINDOW_H
