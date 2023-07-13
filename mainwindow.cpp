@@ -45,3 +45,9 @@ void MainWindow::on_btnExit_clicked()
 
 }
 
+void MainWindow::addContact() {
+    addWindow *addWin = new addWindow(this);
+    connect(addWin, SIGNAL(addContactSignal(Contact)), this, SLOT(_phoneBook.add(Contact)));
+
+    addWin->show();
+}

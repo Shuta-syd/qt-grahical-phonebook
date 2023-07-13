@@ -3,12 +3,15 @@
 
 #include <contact.h>
 #include <QMap>
+#include <QDebug>
 
 class ContactList
 {
 public:
     ContactList();
-    void add();
+
+public slots:
+    void add(Contact &);
     void search();
     void remove();
 

@@ -15,15 +15,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void addContact();
 
 private slots:
     void on_btnAdd_clicked();
-
     void on_btnSearch_clicked();
-
     void on_btnRemove_clicked();
-
     void on_btnExit_clicked();
+
+//    void on_addContact_slot(Contact &);
 
 private:
     Ui::MainWindow *ui;
