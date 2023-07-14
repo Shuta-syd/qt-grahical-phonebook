@@ -5,12 +5,13 @@ ContactList::ContactList() {}
 void ContactList::add(Contact &contact) {
     // debug
     qDebug() << "This is ContactList::add()";
-    qDebug() << QDir::currentPath();
+    qDebug() << QDir::homePath();
 
     this->_contacts.insert(contact.getPhoneNumber(), contact);
 
     // save contact to a file
-    QString filePath = QDir::currentPath() + "contact_data.bin";
+    QString filePath = QDir::homePath() + "/contact_data.bin";
+    qDebug() << filePath;
     QFile file(filePath);
     if (!file.open(QIODevice::WriteOnly)) {
         // error message;
@@ -31,7 +32,7 @@ void ContactList::search() {}
 void ContactList::remove() {}
 
 void ContactList::loadContacts() {
-    QFile file("contact_data.bin");
+    QFile file(QDir::homePath() + "/contact_data.bin");
 
     if (!file.open(QIODevice::ReadOnly)) {
         // error message;
