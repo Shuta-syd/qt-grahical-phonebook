@@ -5,8 +5,10 @@
 #include <QMap>
 #include <QDebug>
 #include <QFile>
-#include <QFileDialog>
 #include <QString>
+#include <QDir>
+#include <QDataStream>
+#include <QStandardPaths>
 
 class ContactList
 {
@@ -17,6 +19,7 @@ public:
     void search();
     void remove();
 
+    void saveContacts();
     void loadContacts();
 
 private:
