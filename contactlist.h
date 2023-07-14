@@ -1,7 +1,7 @@
 #ifndef CONTACTLIST_H
 #define CONTACTLIST_H
 
-#include <contact.h>
+#include "contact.h"
 #include <QMap>
 #include <QDebug>
 #include <QFile>
@@ -16,6 +16,8 @@ public:
     void add(Contact &);
     void search();
     void remove();
+
+    void loadContacts();
 
 private:
     QMap<QString, Contact> _contacts;

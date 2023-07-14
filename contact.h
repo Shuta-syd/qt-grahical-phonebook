@@ -7,6 +7,7 @@ class Contact
 {
 public:
     Contact();
+    Contact(QString, QString, QString);
 
     // getter setter
     QString &getName();
