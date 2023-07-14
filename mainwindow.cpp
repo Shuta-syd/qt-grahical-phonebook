@@ -1,27 +1,23 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "addwindow.h"
 #include "searchwindow.h"
 #include "removewindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow), _addWin(new addWindow(this))
 {
     ui->setupUi(this);
+    connect(_addWin, &addWindow::addContactSignal, this, &MainWindow::on_contact_added);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete _addWin;
 }
 
 
-void MainWindow::on_btnAdd_clicked()
-{
-    addWindow *addWin = new addWindow(this);
-
-    addWin->exec();
-}
+void MainWindow::on_btnAdd_clicked() { _addWin->exec(); }
 
 
 void MainWindow::on_btnSearch_clicked()
@@ -45,9 +41,6 @@ void MainWindow::on_btnExit_clicked()
 
 }
 
-void MainWindow::addContact() {
-    addWindow *addWin = new addWindow(this);
-    connect(addWin, SIGNAL(addContactSignal(Contact)), this, SLOT(_phoneBook.add(Contact)));
-
-    addWin->show();
+void MainWindow::on_contact_added(Contact &contact) {
+   this->_phoneBook.add(contact, fileName);
 }

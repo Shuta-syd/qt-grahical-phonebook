@@ -17,7 +17,7 @@ public:
     ~addWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_addContactBtn_clicked();
 signals:
     void addContactSignal(Contact &);
 

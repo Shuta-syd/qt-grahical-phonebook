@@ -4,13 +4,15 @@
 #include <contact.h>
 #include <QMap>
 #include <QDebug>
+#include <QFile>
+#include <QFileDialog>
+#include <QString>
 
 class ContactList
 {
 public:
     ContactList();
 
-public slots:
     void add(Contact &);
     void search();
     void remove();

@@ -13,7 +13,7 @@ addWindow::~addWindow()
     delete ui;
 }
 
-void addWindow::on_pushButton_clicked()
+void addWindow::on_addContactBtn_clicked()
 {
     Contact contact;
     QString name = ui->nameInput->text();

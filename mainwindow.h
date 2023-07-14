@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "contactlist.h"
+#include "addwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,10 +24,12 @@ private slots:
     void on_btnRemove_clicked();
     void on_btnExit_clicked();
 
-//    void on_addContact_slot(Contact &);
+    void on_contact_added(Contact &);
 
 private:
     Ui::MainWindow *ui;
     ContactList _phoneBook;
+    addWindow *_addWin;
+
 };
 #endif // MAINWINDOW_H

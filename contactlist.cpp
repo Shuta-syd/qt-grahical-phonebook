@@ -3,8 +3,21 @@
 ContactList::ContactList() {}
 
 void ContactList::add(Contact &contact) {
-    //this->_contacts.insert()
-    qDebug() << "signal and slot" << contact.getName();
+    // debug
+    qDebug() << "This is ContactList::add()";
+
+    this->_contacts.insert(contact.getPhoneNumber(), contact);
+
+    // save contact to a file
+    QFile file("temp");
+    if (!file.open(QIODevice::WriteOnly)) {}
+
+    QDataStream out(&file);
+
+    for (auto it = this->_contacts.begin(); it != this->_contacts.end(); it++) {
+        out << it->getName() << it->getPhoneNumber() << it->getEmailAddress();
+    }
+    file.close();
 }
 
 void ContactList::search() {}
