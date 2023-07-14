@@ -10,8 +10,8 @@ void ContactList::add(Contact &contact) {
     this->_contacts.insert(contact.getPhoneNumber(), contact);
 
     // save contact to a file
-    QString filePath = QDir::currentPath() + "contact_data.bin";
-    QFile file(filePath);
+    //QString filePath = QDir::currentPath() + "contact_data.bin";
+    QFile file("contact_data.bin");
     if (!file.open(QIODevice::WriteOnly)) {
         // error message;
         return;
