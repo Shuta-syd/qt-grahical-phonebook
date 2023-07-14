@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(_addWin, &addWindow::addContactSignal, this, &MainWindow::on_contact_added);
     connect(_removeWin, &removeWindow::requestDeleteContactSignal, this, &MainWindow::on_delete_contact);
     this->_phoneBook.loadContacts();
+
+
 }
 
 MainWindow::~MainWindow()
@@ -40,7 +42,7 @@ void MainWindow::on_btnRemove_clicked() {
 
 void MainWindow::on_btnExit_clicked()
 {
-
+  close();
 }
 
 void MainWindow::on_contact_added(Contact &contact) {
