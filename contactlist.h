@@ -19,6 +19,7 @@ public:
     void search();
     void remove();
 
+    void saveContacts();
     void loadContacts();
 
 private:
