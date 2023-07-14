@@ -16,8 +16,11 @@ void ContactList::remove() {}
 
 void ContactList::saveContacts() {
     // save contact to a file
+
+    
     QString filePath = QDir::homePath() + "/contact_data.bin";
     QFile file(filePath);
+
     if (!file.open(QIODevice::WriteOnly)) {
         // error message;
         return;
