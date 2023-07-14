@@ -2,6 +2,8 @@
 
 ContactList::ContactList() {}
 
+QMap<QString, Contact> &ContactList::getContacts() { return this->_contacts; }
+
 void ContactList::add(Contact &contact) {
     // debug
     qDebug() << "This is ContactList::add()";
@@ -12,7 +14,14 @@ void ContactList::add(Contact &contact) {
 
 void ContactList::search() {}
 
-void ContactList::remove() {}
+void ContactList::remove(int idx) {
+    auto it = this->_contacts.begin() + idx;
+    this->_contacts.remove(it.key());
+
+    QMessageBox successMsg;
+    successMsg.setText("Successfully delete a contact");
+    successMsg.exec();
+}
 
 void ContactList::saveContacts() {
     // save contact to a file

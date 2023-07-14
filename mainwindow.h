@@ -2,8 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMap>
+#include <QString>
 #include "contactlist.h"
 #include "addwindow.h"
+#include "removewindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,11 +28,12 @@ private slots:
     void on_btnExit_clicked();
 
     void on_contact_added(Contact &);
+    void on_delete_contact(int);
 
 private:
     Ui::MainWindow *ui;
     ContactList _phoneBook;
     addWindow *_addWin;
-
+    removeWindow *_removeWin;
 };
 #endif // MAINWINDOW_H

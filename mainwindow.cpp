@@ -1,13 +1,14 @@
 #include "mainwindow.h"
+#include "removewindow.h"
 #include "ui_mainwindow.h"
 #include "searchwindow.h"
-#include "removewindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), _addWin(new addWindow(this))
+    : QMainWindow(parent), ui(new Ui::MainWindow), _addWin(new addWindow(this)), _removeWin(new removeWindow(this))
 {
     ui->setupUi(this);
     connect(_addWin, &addWindow::addContactSignal, this, &MainWindow::on_contact_added);
+    connect(_removeWin, &removeWindow::requestDeleteContactSignal, this, &MainWindow::on_delete_contact);
     this->_phoneBook.loadContacts();
 }
 
@@ -29,11 +30,11 @@ void MainWindow::on_btnSearch_clicked()
 }
 
 
-void MainWindow::on_btnRemove_clicked()
-{
-    removeWindow *removeWin = new removeWindow(this);
+void MainWindow::on_btnRemove_clicked() {
+    // list up all of contact on tableWidget
+    this->_removeWin->on_showup_contacts(this->_phoneBook.getContacts());
 
-    removeWin->exec();
+    _removeWin->exec();
 }
 
 
@@ -45,3 +46,7 @@ void MainWindow::on_btnExit_clicked()
 void MainWindow::on_contact_added(Contact &contact) {
    this->_phoneBook.add(contact);
 }
+
+void MainWindow::on_delete_contact(int idx) {
+   this->_phoneBook.remove(idx);
+};
