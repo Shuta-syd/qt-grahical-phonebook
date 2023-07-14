@@ -26,7 +26,7 @@ private slots:
     void on_tableWidget_cellDoubleClicked(int row, int column);
 
 signals:
-    void requestDeleteContactSignal(int);
+    void requestDeleteContactSignal(QString);
 
 private:
     Ui::removeWindow *ui;

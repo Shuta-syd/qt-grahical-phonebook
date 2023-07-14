@@ -14,9 +14,10 @@ void ContactList::add(Contact &contact) {
 
 void ContactList::search() {}
 
-void ContactList::remove(int idx) {
-    auto it = this->_contacts.begin() + idx;
-    this->_contacts.remove(it.key());
+void ContactList::remove(QString key) {
+    auto it = this->_contacts.find(key);
+    qDebug() << key; // debug
+    this->_contacts.remove(key);
 
     QMessageBox successMsg;
     successMsg.setText("Successfully delete a contact");

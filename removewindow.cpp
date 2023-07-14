@@ -25,11 +25,12 @@ void removeWindow::on_showup_contacts(QMap<QString, Contact> contacts) {
 void removeWindow::on_tableWidget_cellDoubleClicked(int row, int column)
 {
     // pop-up a window to check yes or no
+    QTableWidgetItem* item = ui->tableWidget->item(row, 1);
     QMessageBox msgBox;
     msgBox.setInformativeText("Do you want to delete this contact?");
     msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
     int ret = msgBox.exec();
 
-    if (ret == 1024) emit requestDeleteContactSignal(row);
+    if (ret == 1024) emit requestDeleteContactSignal(item->text());
 }
 

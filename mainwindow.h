@@ -28,7 +28,7 @@ private slots:
     void on_btnExit_clicked();
 
     void on_contact_added(Contact &);
-    void on_delete_contact(int);
+    void on_delete_contact(QString);
 
 private:
     Ui::MainWindow *ui;

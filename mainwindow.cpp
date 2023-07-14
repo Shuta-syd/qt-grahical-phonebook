@@ -47,6 +47,6 @@ void MainWindow::on_contact_added(Contact &contact) {
    this->_phoneBook.add(contact);
 }
 
-void MainWindow::on_delete_contact(int idx) {
-   this->_phoneBook.remove(idx);
+void MainWindow::on_delete_contact(QString key) {
+   this->_phoneBook.remove(key);
 };

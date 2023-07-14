@@ -18,7 +18,7 @@ public:
 
     void add(Contact &);
     void search();
-    void remove(int);
+    void remove(QString);
 
     void saveContacts();
     void loadContacts();
