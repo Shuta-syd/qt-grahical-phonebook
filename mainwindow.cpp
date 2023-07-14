@@ -42,5 +42,5 @@ void MainWindow::on_btnExit_clicked()
 }
 
 void MainWindow::on_contact_added(Contact &contact) {
-   this->_phoneBook.add(contact, fileName);
+   this->_phoneBook.add(contact);
 }

@@ -8,8 +8,10 @@ void ContactList::add(Contact &contact) {
 
     this->_contacts.insert(contact.getPhoneNumber(), contact);
 
+    qDebug() << QDir::currentPath();
+
     // save contact to a file
-    QFile file("temp");
+    QFile file("contact_data.bin");
     if (!file.open(QIODevice::WriteOnly)) {}
 
     QDataStream out(&file);
@@ -17,6 +19,7 @@ void ContactList::add(Contact &contact) {
     for (auto it = this->_contacts.begin(); it != this->_contacts.end(); it++) {
         out << it->getName() << it->getPhoneNumber() << it->getEmailAddress();
     }
+    file.flush();
     file.close();
 }
 
