@@ -5,8 +5,10 @@
 #include <QMap>
 #include <QDebug>
 #include <QFile>
-#include <QFileDialog>
 #include <QString>
+#include <QDir>
+#include <QDataStream>
+#include <QStandardPaths>
 
 class ContactList
 {
@@ -16,8 +18,11 @@ public:
     void add(Contact &);
     void search();
     void remove();
-    const QMap<QString, Contact>& getContacts() const;
+
+    void saveContacts();
     void loadContacts();
+  
+    const QMap<QString, Contact>& getContacts() const;
 
 private:
     QMap<QString, Contact> _contacts;
