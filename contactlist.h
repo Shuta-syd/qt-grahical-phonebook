@@ -22,6 +22,7 @@ public:
 
     void saveContacts();
     void loadContacts();
+    void recreateContacts();
     QMap<QString, Contact> &getContacts();
 
 private:

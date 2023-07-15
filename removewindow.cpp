@@ -32,5 +32,7 @@ void removeWindow::on_tableWidget_cellDoubleClicked(int row, int column)
     int ret = msgBox.exec();
 
     if (ret == 1024) emit requestDeleteContactSignal(item->text());
+
+    this->close();
 }
 

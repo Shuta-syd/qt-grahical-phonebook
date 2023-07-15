@@ -5,9 +5,6 @@ ContactList::ContactList() {}
 QMap<QString, Contact> &ContactList::getContacts() { return this->_contacts; }
 
 void ContactList::add(Contact &contact) {
-    // debug
-    qDebug() << "This is ContactList::add()";
-
     this->_contacts.insert(contact.getPhoneNumber(), contact);
     this->saveContacts();
 }
@@ -16,17 +13,18 @@ void ContactList::search() {}
 
 void ContactList::remove(QString key) {
     auto it = this->_contacts.find(key);
-    qDebug() << key; // debug
     this->_contacts.remove(key);
 
     QMessageBox successMsg;
     successMsg.setText("Successfully delete a contact");
     successMsg.exec();
+
+    // delete contact from binary file
+    this->recreateContacts();
 }
 
 void ContactList::saveContacts() {
     // save contact to a file
-
     
     QString filePath = QDir::homePath() + "/contact_data.bin";
     QFile file(filePath);
@@ -72,5 +70,17 @@ void ContactList::loadContacts() {
     for (auto it = this->_contacts.begin(); it != this->_contacts.end(); it++) {
         qDebug() << it->getName() << it->getPhoneNumber() << it->getEmailAddress();
     }
+}
 
+void ContactList::recreateContacts() {
+    QString filePath = QDir::homePath() + "/contact_data.bin";
+    QFile file(filePath);
+
+    // delete a file
+    if (!file.remove()) {
+        // handle error
+        return;
+    }
+
+    this->saveContacts();
 }
