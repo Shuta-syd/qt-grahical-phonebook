@@ -9,6 +9,7 @@
 #include <QDir>
 #include <QDataStream>
 #include <QStandardPaths>
+#include <QMessageBox>
 
 class ContactList
 {
@@ -17,11 +18,11 @@ public:
 
     void add(Contact &);
     void search();
-    void remove();
+    void remove(QString);
 
     void saveContacts();
     void loadContacts();
-  
+
     const QMap<QString, Contact>& getContacts() const;
 
 private:
