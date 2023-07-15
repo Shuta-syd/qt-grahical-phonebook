@@ -12,7 +12,7 @@ void ContactList::add(Contact &contact) {
 void ContactList::search() {}
 
 void ContactList::remove(QString key) {
-    auto it = this->_contacts.find(key);
+    this->_contacts.find(key);
     this->_contacts.remove(key);
 
     QMessageBox successMsg;
@@ -25,7 +25,7 @@ void ContactList::remove(QString key) {
 
 void ContactList::saveContacts() {
     // save contact to a file
-    
+
     QString filePath = QDir::homePath() + "/contact_data.bin";
     QFile file(filePath);
 

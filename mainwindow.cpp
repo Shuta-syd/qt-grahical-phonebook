@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     connect(_addWin, &addWindow::addContactSignal, this, &MainWindow::on_contact_added);
     connect(_removeWin, &removeWindow::requestDeleteContactSignal, this, &MainWindow::on_delete_contact);
+    connect(_removeWin, &removeWindow::request_showup_contanct_byName, this, &MainWindow::on_showup_contanct_byName);
     this->_phoneBook.loadContacts();
 
 
@@ -51,4 +52,8 @@ void MainWindow::on_contact_added(Contact &contact) {
 
 void MainWindow::on_delete_contact(QString key) {
    this->_phoneBook.remove(key);
+};
+
+void MainWindow::on_showup_contanct_byName(QString &str) {
+   this->_removeWin->showup_contacts_byName(str, this->_phoneBook.getContacts());
 };

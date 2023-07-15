@@ -29,6 +29,7 @@ private slots:
 
     void on_contact_added(Contact &);
     void on_delete_contact(QString);
+    void on_showup_contanct_byName(QString &);
 
 private:
     Ui::MainWindow *ui;
