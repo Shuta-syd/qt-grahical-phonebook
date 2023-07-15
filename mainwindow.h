@@ -7,6 +7,7 @@
 #include "contactlist.h"
 #include "addwindow.h"
 #include "removewindow.h"
+#include "searchwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -36,5 +37,7 @@ private:
     ContactList _phoneBook;
     addWindow *_addWin;
     removeWindow *_removeWin;
+    searchWindow * _searchWin;
+
 };
 #endif // MAINWINDOW_H
