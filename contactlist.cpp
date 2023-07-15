@@ -30,7 +30,8 @@ void ContactList::saveContacts() {
     QFile file(filePath);
 
     if (!file.open(QIODevice::WriteOnly)) {
-        // error message;
+        QMessageBox msgbox;
+        msgbox.critical(nullptr, "Error", ": to open file failed");
         return;
     }
 
@@ -48,7 +49,8 @@ void ContactList::loadContacts() {
     QFile file(QDir::homePath() + "/contact_data.bin");
 
     if (!file.open(QIODevice::ReadOnly)) {
-        // error message;
+        QMessageBox msgbox;
+        msgbox.critical(nullptr, "Error", ": to open file failed");
         return;
     }
 
@@ -78,7 +80,8 @@ void ContactList::recreateContacts() {
 
     // delete a file
     if (!file.remove()) {
-        // handle error
+        QMessageBox msgbox;
+        msgbox.critical(nullptr, "Error", ": to remove file failed");
         return;
     }
 
