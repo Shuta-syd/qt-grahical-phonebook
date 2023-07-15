@@ -9,7 +9,7 @@ searchWindow::searchWindow(QWidget *parent, const ContactList& phoneBook) :
 {
     ui->setupUi(this);
 
-    // 모든 연락처를 ListWidget에 추가합니다.
+    // add every contacts to QListWidget
     for (auto it = _contacts.constBegin(); it != _contacts.constEnd(); ++it) {
         QString listItemText = it.value().getName();
         ui->listWidget->addItem(listItemText);
