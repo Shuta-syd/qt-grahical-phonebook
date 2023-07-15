@@ -53,7 +53,7 @@ void searchWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
                           "phone number: " + selectedContact.getPhoneNumber() + "\n"
                               "email address: " + selectedContact.getEmailAddress();
 
-                                                             QMessageBox::about(this, "연락처 세부 정보", message);
+                                                             QMessageBox::about(this, "detail of contacts", message);
     }
 }
 
