@@ -11,9 +11,9 @@ public:
     Contact();
     Contact(QString name, QString phoneNumber, QString emailAddress);
 
-    QString getName() const; // const 키워드 추가
-    QString getPhoneNumber() const; // const 키워드 추가
-    QString getEmailAddress() const; // const 키워드 추가
+    QString getName() const; // add const keyword
+    QString getPhoneNumber() const; // add const keyword
+    QString getEmailAddress() const; // add const keyword
 
     void setName(QString name);
     void setPhoneNumber(QString phoneNumber);
