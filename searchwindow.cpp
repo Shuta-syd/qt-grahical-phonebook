@@ -8,19 +8,20 @@ searchWindow::searchWindow(QWidget *parent, const ContactList& phoneBook) :
     _contacts(phoneBook.getContacts())
 {
     ui->setupUi(this);
-
-    // add every contacts to QListWidget
-    for (auto it = _contacts.constBegin(); it != _contacts.constEnd(); ++it) {
-        QString listItemText = it.value().getName();
-        ui->listWidget->addItem(listItemText);
-    }
 }
 
 searchWindow::~searchWindow()
 {
     delete ui;
 }
+void searchWindow::initialize_list() {
 
+    ui->listWidget->clear();
+    for (auto it = _contacts.constBegin(); it != _contacts.constEnd(); ++it) {
+        QString listItemText = it.value().getName();
+        ui->listWidget->addItem(listItemText);
+    }
+}
 void searchWindow::on_pushButton_clicked()
 {
     QString searchInput = ui->searchInput->text();
