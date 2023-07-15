@@ -18,7 +18,7 @@ class searchWindow : public QDialog
 
 public:
     explicit searchWindow(QWidget *parent = nullptr, const ContactList& phoneBook = {});
-
+    void initialize_list();
     ~searchWindow();
 
 private slots:

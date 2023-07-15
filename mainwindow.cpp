@@ -27,7 +27,10 @@ void MainWindow::on_btnAdd_clicked() { _addWin->exec(); }
 
 void MainWindow::on_btnSearch_clicked()
 {
-        _searchWin->exec();
+    // add every contacts to QListWidget
+    _searchWin->initialize_list();
+
+    _searchWin->exec();
 }
 
 
