@@ -21,7 +21,7 @@ public:
     explicit removeWindow(QWidget *parent = nullptr);
     ~removeWindow();
     void on_showup_contacts(QMap<QString, Contact> contacts);
-    void showup_contacts_byName(QString& , QMap<QString, Contact>&);
+    void showup_contacts_byName(QString& , const QMap<QString, Contact>&);
 
 private slots:
     void on_tableWidget_cellDoubleClicked(int row, int column);

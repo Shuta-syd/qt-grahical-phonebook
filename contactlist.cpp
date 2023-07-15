@@ -2,8 +2,6 @@
 
 ContactList::ContactList() {}
 
-QMap<QString, Contact> &ContactList::getContacts() { return this->_contacts; }
-
 void ContactList::add(Contact &contact) {
     this->_contacts.insert(contact.getPhoneNumber(), contact);
     this->saveContacts();

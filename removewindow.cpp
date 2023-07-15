@@ -22,7 +22,7 @@ void removeWindow::on_showup_contacts(QMap<QString, Contact> contacts) {
     }
 }
 
-void removeWindow::showup_contacts_byName(QString& str, QMap<QString, Contact>&contacts) {
+void removeWindow::showup_contacts_byName(QString& str, const QMap<QString, Contact>&contacts) {
     ui->tableWidget->clear();
     ui->tableWidget->setRowCount(contacts.size());
 
