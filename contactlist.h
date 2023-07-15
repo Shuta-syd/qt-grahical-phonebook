@@ -21,6 +21,8 @@ public:
 
     void saveContacts();
     void loadContacts();
+  
+    const QMap<QString, Contact>& getContacts() const;
 
 private:
     QMap<QString, Contact> _contacts;

@@ -16,7 +16,6 @@ void ContactList::remove() {}
 
 void ContactList::saveContacts() {
     // save contact to a file
-
     
     QString filePath = QDir::homePath() + "/contact_data.bin";
     QFile file(filePath);
@@ -63,4 +62,9 @@ void ContactList::loadContacts() {
         qDebug() << it->getName() << it->getPhoneNumber() << it->getEmailAddress();
     }
 
+}
+
+const QMap<QString, Contact>& ContactList::getContacts() const
+{
+    return _contacts;
 }

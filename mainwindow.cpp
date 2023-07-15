@@ -4,7 +4,7 @@
 #include "removewindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), _addWin(new addWindow(this))
+    : QMainWindow(parent), ui(new Ui::MainWindow), _addWin(new addWindow(this)), _searchWin(new searchWindow(this, this->_phoneBook))
 {
     ui->setupUi(this);
     connect(_addWin, &addWindow::addContactSignal, this, &MainWindow::on_contact_added);
@@ -25,9 +25,7 @@ void MainWindow::on_btnAdd_clicked() { _addWin->exec(); }
 
 void MainWindow::on_btnSearch_clicked()
 {
-    searchWindow *searchWin = new searchWindow(this);
-
-    searchWin->exec();
+        _searchWin->exec();
 }
 
 

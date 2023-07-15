@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "contactlist.h"
 #include "addwindow.h"
+#include "searchwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,6 +31,7 @@ private:
     Ui::MainWindow *ui;
     ContactList _phoneBook;
     addWindow *_addWin;
+    searchWindow * _searchWin;
 
 };
 #endif // MAINWINDOW_H

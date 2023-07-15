@@ -72,7 +72,6 @@ void addWindow::on_addContactBtn_clicked()
     ui->nameInput->clear();
     ui->phoneNumberInput->clear();
     ui->emailInput->clear();
-
 }
 
 
