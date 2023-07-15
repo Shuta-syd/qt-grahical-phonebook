@@ -1,3 +1,5 @@
+// contact.h
+
 #ifndef CONTACT_H
 #define CONTACT_H
 
@@ -7,16 +9,15 @@ class Contact
 {
 public:
     Contact();
-    Contact(QString, QString, QString);
+    Contact(QString name, QString phoneNumber, QString emailAddress);
 
-    // getter setter
-    QString &getName();
-    QString &getPhoneNumber();
-    QString &getEmailAddress();
+    QString getName() const; // const 키워드 추가
+    QString getPhoneNumber() const; // const 키워드 추가
+    QString getEmailAddress() const; // const 키워드 추가
 
-    void setName(QString);
-    void setPhoneNumber(QString);
-    void setEmailAddress(QString);
+    void setName(QString name);
+    void setPhoneNumber(QString phoneNumber);
+    void setEmailAddress(QString emailAddress);
 
 private:
     QString _name;

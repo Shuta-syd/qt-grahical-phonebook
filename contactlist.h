@@ -16,7 +16,7 @@ public:
     void add(Contact &);
     void search();
     void remove();
-
+    const QMap<QString, Contact>& getContacts() const;
     void loadContacts();
 
 private:

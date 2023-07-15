@@ -23,8 +23,7 @@ void MainWindow::on_btnAdd_clicked() { _addWin->exec(); }
 
 void MainWindow::on_btnSearch_clicked()
 {
-    searchWindow *searchWin = new searchWindow(this);
-
+    searchWindow *searchWin = new searchWindow(this, this->_phoneBook);
     searchWin->exec();
 }
 

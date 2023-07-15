@@ -29,7 +29,13 @@ void addWindow::on_addContactBtn_clicked()
     // debug
     qDebug() << contact.getName() << contact.getPhoneNumber() << contact.getEmailAddress();
 
+    if (1) {
+        emit this->addContactSignal(contact);
+        ui->label_add->setText("Added successfully");
+    } else {
+        ui->label_add->setText("Failed");
+    }
     // signal and slot
-    emit this->addContactSignal(contact);
+
 }
 
