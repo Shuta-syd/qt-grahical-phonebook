@@ -39,9 +39,6 @@ void searchWindow::on_pushButton_clicked()
     }
 }
 
-
-
-
 void searchWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 {
     int selectedIndex = ui->listWidget->row(item);
