@@ -66,14 +66,8 @@ void addWindow::on_addContactBtn_clicked()
 
     // Signal and slot
     emit addContactSignal(contact);
-    QMessageBox::information(this, "Success", "Contact added successfully!");
 
-    close();
     ui->nameInput->clear();
     ui->phoneNumberInput->clear();
     ui->emailInput->clear();
 }
-
-
-
-

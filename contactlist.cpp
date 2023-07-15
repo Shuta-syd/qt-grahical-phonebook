@@ -3,7 +3,14 @@
 ContactList::ContactList() {}
 
 void ContactList::add(Contact &contact) {
+    if (this->_contacts.contains(contact.getPhoneNumber())) {
+        QMessageBox msgbox;
+        msgbox.critical(nullptr, "Error", "Phone number already exists");
+        return;
+    }
     this->_contacts.insert(contact.getPhoneNumber(), contact);
+    QMessageBox successMsg;
+    successMsg.information(nullptr, "Success", "Contact added successfully!");
     this->saveContacts();
 }
 
